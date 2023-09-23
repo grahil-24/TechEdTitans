@@ -8141,18 +8141,21 @@ parcelRequire = (function (modules, cache, entry, globalName) {
                                                             1500
                                                         );
                                                     }
-                                                    _context.next = 11;
+                                                    _context.next = 12;
                                                     break;
                                                 case 8:
                                                     _context.prev = 8;
                                                     _context.t0 =
                                                         _context['catch'](1);
+                                                    console.log(
+                                                        _context.t0.response
+                                                            .data
+                                                    );
                                                     (0, _alerts.showAlert)(
                                                         'error',
-                                                        _context.t0.response
-                                                            .data.message
+                                                        'Incorrect password or email. Please try again'
                                                     );
-                                                case 11:
+                                                case 12:
                                                 case 'end':
                                                     return _context.stop();
                                             }
@@ -8880,22 +8883,17 @@ parcelRequire = (function (modules, cache, entry, globalName) {
                                                         },
                                                         1000
                                                     );
-                                                    _context.next = 13;
+                                                    _context.next = 12;
                                                     break;
                                                 case 9:
                                                     _context.prev = 9;
                                                     _context.t0 =
                                                         _context['catch'](0);
-                                                    console.log(
-                                                        _context.t0.response
-                                                            .data
-                                                    );
                                                     (0, _alerts.showAlert)(
                                                         'error',
-                                                        _context.t0.response
-                                                            .data.message
+                                                        'User with the same email or phone number already exists!'
                                                     );
-                                                case 13:
+                                                case 12:
                                                 case 'end':
                                                     return _context.stop();
                                             }
@@ -8997,7 +8995,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
                     var protocol =
                         location.protocol === 'https:' ? 'wss' : 'ws';
                     var ws = new WebSocket(
-                        protocol + '://' + hostname + ':' + '59559' + '/'
+                        protocol + '://' + hostname + ':' + '60138' + '/'
                     );
                     ws.onmessage = function (event) {
                         checkedAssets = {};

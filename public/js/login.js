@@ -21,7 +21,8 @@ export const login = async (email, password) => {
             }, 1500);
         }
     } catch (err) {
-        showAlert('error', err.response.data.message);
+        console.log(err.response.data);
+        showAlert('error', 'Incorrect password or email. Please try again');
     }
 };
 

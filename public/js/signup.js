@@ -29,7 +29,9 @@ export const signup = async (
             location.assign('/');
         }, 1000);
     } catch (err) {
-        console.log(err.response.data);
-        showAlert('error', err.response.data.message);
+        showAlert(
+            'error',
+            'User with the same email or phone number already exists!'
+        );
     }
 };
