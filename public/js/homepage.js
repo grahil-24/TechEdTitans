@@ -1,8 +1,9 @@
 /*eslint-disable*/
 /* ----- Navbar ----- */
+import { logout } from './login';
 let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header nav a');
-
+let logoutBtn = document.querySelector('#logoutBtn');
 window.onscroll = () => {
     sections.forEach((section) => {
         let top = window.scrollY;
@@ -13,9 +14,7 @@ window.onscroll = () => {
         if (top >= offset && top < offset + height) {
             navLinks.forEach((link) => {
                 link.classList.remove('active');
-                document
-                    .querySelector('header nav a[href*=' + id + ']')
-                    .classList.add('active');
+                document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
             });
         }
     });
@@ -45,4 +44,10 @@ counters.forEach((counter) => {
 
     updateCounter();
 });
+
+if (logoutBtn) {
+    console.log('logout btn clicked');
+    logoutBtn.addEventListener('click', logout);
+}
+
 /* ----- Counters ----- */

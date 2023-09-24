@@ -1,62 +1,71 @@
-doctype html 
-html(lang='en' dir='ltr')
-    head
-        meta(charset='UTF-8')
-        title  Login and Registration Form in HTML &amp; CSS | CodingLab
-        link(rel='stylesheet' href='/css/style.css')
-        
-        link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css')
-        meta(name='viewport' content='width=device-width, initial-scale=1.0')
-    body 
-        .container
-            input(type='checkbox' id='flip')
-            .cover
-                .front 
-                    img(src='img/photo.jpg' alt='')
-                    .text
-                .back
-                    img(class='backImg' src='backImg.jpg' alt='')
-                    .text
-            .forms
-                .form-content
-                    .login-form
-                        .title Login
-                    form(class='form-login')
-                        .input-boxes
-                            .input-box
-                                i(class='fas fa-user')
-                                input(type='email' placeholder='Enter your email' id='email' required)
-                            .input-box
-                                i(class='fas fa-lock')
-                                input(type='password' placeholder='Enter your password' id='password' required)
-                            .text
-                                a(href='#') Forgot password?
-                            div(class='button input-box')
-                                input(type='submit' value='Submit')
-                            div(class='text sign-up-text') Dont have an account?
-                                label(for='flip' onclick='flip()') Sign up now
-                .signup-form
-                    .title Signup
-                form(class='form-signup')
-                    .input-boxes 
-                        .input-box 
-                            i(class='fas fa-user')
-                            input(type='text' placeholder='Enter your name' id='name' required)
-                        .input-box 
-                            i(class='fas fa-envelope')
-                            input(type='text' placeholder='Enter your email' id='email-signup' required)
-                        .input-box 
-                            i(class='fas fa-lock')
-                            input(type='password' placeholder='Enter your password' id='password-signup' required)
-                        .input-box
-                            i(class='fas fa-lock')
-                            input(type='password' placeholder='Confirm your password' id='passwordConfirm' required)
-                        .input-box 
-                            i(class='fas fa-phone')
-                            input( type='tel' placeholder='Enter Your Mobile Number' id='phoneNumber' required)
-                        div(class='button input-box')
-                            input(type='submit' value='Submit')
-                        div(class='text sign-up-text') Already have an account?
-                            label(for='flip') Login now
-                        
+doctype html
+// Coding by CodingNepal | www.codingnepalweb.com
+html(lang='en', dir='ltr')
+  head
+    meta(charset='UTF-8')
+    title  Login and Registration Form in HTML &amp; CSS | CodingLab 
+    link(rel='stylesheet', href='/css/style.css')
+    // Fontawesome CDN Link
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  body
+    .container
+      input#flip(type='checkbox')
+      .cover
+        .front
+          img(src='/img/photo.jpg', alt='')
+          .text
+            //
+              <span class="text-1">Every new friend is a <br> new adventure</span>
+              <span class="text-2">Let's get connected</span>
+        .back
+          img.backImg(src='backImg.jpg', alt='')
+          .text
+            //
+              <span class="text-1">Complete miles of journey <br> with one step</span>
+              <span class="text-2">Let's get started</span>
+      .forms
+        .form-content
+          .login-form
+            .title Login
+            form(class='form-login')
+              .input-boxes
+                .input-box
+                  i.fas.fa-user
+                  input(type='text', placeholder='Enter your email', id='email',required)
+                .input-box
+                  i.fas.fa-lock
+                  input(type='password', placeholder='Enter your password', id='password',required='')
+                .text
+                  a(href='#') Forgot password?
+                .button.input-box
+                  input(type='submit', value='Submit')
+                .text.sign-up-text
+                  | Don&apos;t have an account? 
+                  label(for='flip', onclick='flip()') Sigup now
+          .signup-form
+            .title Signup
+            form('form-signup')
+              .input-boxes
+                .input-box
+                  i.fas.fa-user
+                  input(type='text', placeholder='Enter your name', id='name', required)
+                .input-box
+                  i.fas.fa-envelope
+                  input(type='text', placeholder='Enter your email',id='email-signup', required)
+                .input-box
+                  i.fas.fa-lock
+                  input(type='password', placeholder='Enter your password',id='password-signup',required)
+                .input-box
+                  i.fas.fa-lock
+                  input(type='password', placeholder='Confirm your password', id='passwordConfirm',required)
+                .input-box
+                  i.fas.fa-phone
+                  input(type='tel', placeholder='Enter Your Mobile Number', id='phoneNumber',required)
+                .button.input-box
+                  input(type='submit', value='Submit')
+                  // <a href="otp.html" class="btn">Submit</a>
+                .text.sign-up-text
+                  | Already have an account? 
+                  label(for='flip') Login now
     script(src='/js/bundle.js')

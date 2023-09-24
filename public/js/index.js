@@ -1,5 +1,5 @@
 /*eslint-disable*/
-import { login } from './login';
+import { login, logout } from './login';
 import { signup } from './signup';
 
 const loginForm = document.querySelector('.form-login');
@@ -23,8 +23,7 @@ if (signupForm) {
         const name = document.getElementById('name').value;
         const email = document.getElementById('email-signup').value;
         const password = document.getElementById('password-signup').value;
-        const passwordConfirm =
-            document.getElementById('passwordConfirm').value;
+        const passwordConfirm = document.getElementById('passwordConfirm').value;
         const phoneNumber = document.getElementById('phoneNumber').value;
         console.log(name, email, password, passwordConfirm, phoneNumber);
         signup(name, email, password, passwordConfirm, phoneNumber);

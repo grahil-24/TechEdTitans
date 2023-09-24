@@ -30,10 +30,10 @@ export const logout = async () => {
     try {
         const res = await axios({
             method: 'GET',
-            url: '/api/users/logout',
+            url: 'http://127.0.0.1:8000/api/users/logout',
         });
 
-        if ((res.data.status = 'success')) {
+        if (res.data.status === 'success') {
             //reloading after logging out
             location.assign('/');
         }

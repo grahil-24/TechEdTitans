@@ -3,6 +3,7 @@ const router = express.Router();
 const viewsController = require('../controllers/viewsController');
 const authController = require('../controllers/authController');
 const path = require('path');
+const userRouter = require('./userRoutes');
 
 router.get('/', authController.isLoggedIn, viewsController.getFrontPage);
 
