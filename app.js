@@ -1,5 +1,6 @@
-const path = require('path');
 const express = require('express');
+const path = require('path');
+const helmet = require('helmet');
 const userRouter = require('./routes/userRoutes');
 const viewRouter = require('./routes/viewRoutes');
 const cookieParser = require('cookie-parser');
@@ -9,6 +10,49 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'public'))); // eslint-disable-line
 
 app.use(express.urlencoded({ extended: true, limit: '10kb' }));
+
+// app.use(
+//     helmet({
+//         contentSecurityPolicy: {
+//             directives: {
+//                 defaultSrc: ["'self'", 'data:', 'blob:', 'https:', 'ws:'],
+//                 baseUri: ["'self'"],
+//                 fontSrc: ["'self'", 'https:', 'data:'],
+//                 scriptSrc: [
+//                     "'self'",
+//                     'https:',
+//                     'http:',
+//                     'blob:',
+//                     'https://*.cloudflare.com',
+//                     'https://unpkg.com/',
+//                 ],
+//                 frameSrc: ["'self'"],
+//                 objectSrc: ["'none'"],
+//                 styleSrc: [
+//                     "'self'",
+//                     'https:',
+//                     "'unsafe-inline'",
+//                     'https://unpkg.com/',
+//                     'https://fonts.googleapis.com/',
+//                 ],
+//                 workerSrc: ["'self'", 'data:', 'blob:'],
+//                 childSrc: ["'self'", 'blob:'],
+//                 imgSrc: ["'self'", 'data:', 'blob:'],
+//                 formAction: ["'self'"],
+//                 connectSrc: [
+//                     "'self'",
+//                     "'unsafe-inline'",
+//                     'data:',
+//                     'blob:',
+//                     'https://*.cloudflare.com/',
+//                     'https://bundle.js:*',
+//                     'ws://127.0.0.1:*/',
+//                 ],
+//                 upgradeInsecureRequests: [],
+//             },
+//         },
+//     })
+// );
 
 // parsing data from cookies
 app.use(cookieParser());

@@ -1,0 +1,118 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    // Bootstrap CSS Link
+    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css', rel='stylesheet', integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC', crossorigin='anonymous')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css', integrity='sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==', crossorigin='anonymous', referrerpolicy='no-referrer')
+    link(rel='stylesheet', href='/css/homepage.css')
+    title Homepage
+  body
+    header.header
+      h2.logo TechEdTitans
+      nav.navbar
+        a.active(href='#home') Home
+        a(href='#about') About
+        a(href='#register') Register
+        a(href='#statistics') Statistics
+        a(href='#contact') Contact
+        if user
+            a(href='#aboutMe')= user.name.split(' ')[0]
+        else
+            a(href='/login')
+                button.btnLogin-popup Login
+            a(href='/login')
+                button.btnLogin-popup SignUp
+    #carouselExampleInterval.carousel.slide(data-bs-ride='carousel')
+      .carousel-inner
+        .carousel-item.active(data-bs-interval='3000')
+          img.d-block(src='/img/backgroundImageCarouselResized.jpg', alt='...')
+        .carousel-item(data-bs-interval='3000')
+          img.d-block(src='/img/backgroundImageCarouselResized.jpg', alt='...')
+      button.carousel-control-prev(type='button', data-bs-target='#carouselExampleInterval', data-bs-slide='prev')
+        span.carousel-control-prev-icon(aria-hidden='true')
+        span.visually-hidden Previous
+      button.carousel-control-next(type='button', data-bs-target='#carouselExampleInterval', data-bs-slide='next')
+        span.carousel-control-next-icon(aria-hidden='true')
+        span.visually-hidden Next
+    section#home
+      div Home
+    section#about
+      .about-container
+        h2.about-heading Bridging the gap between Students &#x1F468;&zwj;&#x1F393; and Institutions &#x1F3EB;
+        img.about-image(src='/img/AboutUsPaint.png', alt='')
+    section#register
+      #applyStudent-card.card
+        #applyStudent-head.card-header
+        .card-body
+          h1#applyStudent-heading As an Applicant
+          a.btn(href='#') Apply
+      #institution-card.card
+        #institution-head.card-header
+        .card-body
+          h1#institution-heading As an Institution
+          a.btn(href='../UniversityReg/index.html') Apply
+    section#statistics
+      .counter-container
+        i.fa-solid.fa-mug-hot.fa-4x
+        // data-* attributes are designed to hold custom data for custom code (typically client side js) to process
+        .counter(data-target='4000')
+        span Projected Completed
+      .counter-container
+        i.fa-solid.fa-users.fa-4x
+        .counter(data-target='15000')
+        span Our Happy Clients
+      .counter-container
+        i.fa-solid.fa-tasks.fa-4x
+        .counter(data-target='500')
+        span On Going Projects
+    section#contact
+      .contact
+        h2 Contact Us
+        p For Any Queries. Please fill the form provided
+      .container
+        .contactInfo
+          .box
+            .icon
+              i.fa-sharp.fa-solid.fa-location-dot
+            .text
+              h3 Address
+              p
+                | PDEU, Bhaijura Road,
+                br
+                | Raisan,
+                br
+                | Ghandhinagar
+          .box
+            .icon
+              i.fa-solid.fa-phone
+            .text
+              h3 Phone
+              p 123-456-7890
+          .box
+            .icon
+              i.fa-solid.fa-envelope
+            .text
+              h3 Email
+              p queries@gmail.com
+        .contactForm
+          form(action='')
+            h2 Send Message
+            .inputBox
+              input(type='text', name='', required='')
+              span Full Name
+            .inputBox
+              input(type='text', name='', required='')
+              span Email
+            .inputBox
+              textarea(name='', id='', cols='10', rows='5', required='')
+              span Type Your Message
+            .inputBox
+              input(type='submit', name='', value='Send')
+    // Bootstrap Popper JS and then JavaScript Plugins
+    script(src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js', integrity='sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p', crossorigin='anonymous')
+    script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js', integrity='sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF', crossorigin='anonymous')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css')
+    script(src='https://kit.fontawesome.com/c6ff6eac09.js', crossorigin='anonymous')
+    script(src='/js/homepage.js')

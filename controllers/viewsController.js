@@ -7,3 +7,7 @@ exports.getLoginForm = (req, res) => {
         title: 'Log into your account',
     });
 };
+
+exports.getFrontPage = (req, res) => {
+    res.status(200).render('homepage');
+};

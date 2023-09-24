@@ -17,7 +17,7 @@ export const login = async (email, password) => {
             console.log('logged in successfully!');
             showAlert('success', 'Logged in successfully');
             window.setTimeout(() => {
-                location.assign('www.google.com');
+                location.assign('/');
             }, 1500);
         }
     } catch (err) {

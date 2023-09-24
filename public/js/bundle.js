@@ -8135,7 +8135,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
                                                         window.setTimeout(
                                                             function () {
                                                                 location.assign(
-                                                                    'www.google.com'
+                                                                    '/'
                                                                 );
                                                             },
                                                             1500
@@ -8995,7 +8995,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
                     var protocol =
                         location.protocol === 'https:' ? 'wss' : 'ws';
                     var ws = new WebSocket(
-                        protocol + '://' + hostname + ':' + '60138' + '/'
+                        protocol + '://' + hostname + ':' + '52177' + '/'
                     );
                     ws.onmessage = function (event) {
                         checkedAssets = {};

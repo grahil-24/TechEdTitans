@@ -20,9 +20,10 @@ const createSendToken = (user, statusCode, res) => {
         expires: new Date(
             Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
         ),
-        secure: true, // for now false. keeping this true, means cookie will be sent only under secure conditions
+        secure: false, // for now false. keeping this true, means cookie will be sent only under secure conditions
         httpOnly: true, //cookie cannot be accessed or modified by browser
     };
+    if (process.env.NODE_ENV === 'production') cookieOptions.secure = true;
     res.cookie('jwt', token);
 
     user.password = undefined; //hide password when sending user in response body
@@ -94,6 +95,8 @@ exports.isLoggedIn = async (req, res, next) => {
             }
 
             res.locals.user = currentUser;
+            console.log('finished isLoggedIn method');
+            console.log(res.locals.user);
             return next();
         } catch (err) {
             return next();
