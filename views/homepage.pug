@@ -19,6 +19,7 @@ html(lang='en')
         a(href='#contact') Contact
         if user
             a(href='/aboutMe')= user.name.split(' ')[0]
+            img.nav__user-img(src='/img/users/default.jpg' alt = `Photo of ${user.name}`)
             button.btnLogin-popup#logoutBtn Logout
         else
             a(href='/login')

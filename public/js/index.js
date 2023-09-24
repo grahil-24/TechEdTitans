@@ -1,10 +1,10 @@
 /*eslint-disable*/
 import { login, logout } from './login';
 import { signup } from './signup';
-
+import {} from './homepage';
 const loginForm = document.querySelector('.form-login');
 const signupForm = document.querySelector('.form-signup');
-
+const logoutBtn = document.querySelector('#logoutBtn');
 if (loginForm) {
     loginForm.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -29,3 +29,8 @@ if (signupForm) {
         signup(name, email, password, passwordConfirm, phoneNumber);
     });
 }
+
+logoutBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    logout();
+});

@@ -1,9 +1,8 @@
 /*eslint-disable*/
 /* ----- Navbar ----- */
-import { logout } from './login';
 let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header nav a');
-let logoutBtn = document.querySelector('#logoutBtn');
+
 window.onscroll = () => {
     sections.forEach((section) => {
         let top = window.scrollY;
@@ -44,10 +43,5 @@ counters.forEach((counter) => {
 
     updateCounter();
 });
-
-if (logoutBtn) {
-    console.log('logout btn clicked');
-    logoutBtn.addEventListener('click', logout);
-}
 
 /* ----- Counters ----- */
